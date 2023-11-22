@@ -18,7 +18,9 @@ def get_weatherdata():
     response = requests.get(url, params=params)
     data = response.json()
     city = data['name']
-    return f"data : {data}, city:{city}"
+    return render_template("result.html", data=data, city=city)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000)
+
+    
