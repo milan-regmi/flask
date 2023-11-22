@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Result</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather Information for {{ city }}</h1>
+    <table>
+        <tr>
+            <th>Property</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Temperature</td>
+            <td>{{ data['main']['temp'] }} °C</td>
+        </tr>
+        <tr>
+            <td>Feels Like</td>
+            <td>{{ data['main']['feels_like'] }} °C</td>
+        </tr>
+        <tr>
+            <td>Minimum Temperature</td>
+            <td>{{ data['main']['temp_min'] }} °C</td>
+        </tr>
+        <tr>
+            <td>Maximum Temperature</td>
+            <td>{{ data['main']['temp_max'] }} °C</td>
+        </tr>
+        <tr>
+            <td>Pressure</td>
+            <td>{{ data['main']['pressure'] }} hPa</td>
+        </tr>
+        <tr>
+            <td>Humidity</td>
+            <td>{{ data['main']['humidity'] }}%</td>
+        </tr>
+        <tr>
+            <td>Visibility</td>
+            <td>{{ data['visibility'] }} meters</td>
+        </tr>
+        <tr>
+            <td>Wind Speed</td>
+            <td>{{ data['wind']['speed'] }} m/s</td>
+        </tr>
+        <tr>
+            <td>Wind Direction</td>
+            <td>{{ data['wind']['deg'] }}°</td>
+        </tr>
+        <tr>
+            <td>Weather Description</td>
+            <td>{{ data['weather'][0]['description'] }}</td>
+        </tr>
+    </table>
+</body>
+</html>
